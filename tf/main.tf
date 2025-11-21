@@ -119,6 +119,3 @@ depends_on = [
   }
 }
 
-resource "aws_secretsmanager_secret" "github_pat" {
-  name = "vercel-ai-chatbot/dev/GITHUB__PAT"
-}

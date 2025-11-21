@@ -36,3 +36,11 @@ yarn-error.log*
 .env
 .vercel
 .vscode
+
+# Terraform local files
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+crash.log
+.env*.local

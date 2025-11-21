@@ -35,15 +35,6 @@ data "aws_iam_policy_document" "codebuild_policy" {
     resources = ["*"]
   }
 
-  # statement {
-  #   actions = [
-  #     "sts:GetCallerIdentity",
-  #     "apprunner:StartDeployment",
-  #     "apprunner:DescribeService"
-  #   ]
-  #   resources = ["*"]
-  # }
-
   statement {
     actions = [
       "secretsmanager:GetSecretValue",
@@ -163,7 +154,7 @@ data "aws_iam_policy_document" "codepipeline_policy" {
 
   statement {
     actions   = ["codestar-connections:UseConnection"]
-    resources = ["arn:aws:codeconnections:us-east-1:669136815479:connection/4b63f27d-607b-4a98-83fe-4000fedbfc15"]
+    resources = ["arn:aws:codeconnections:us-east-1:669136815479:connection/b7a6733f-6ed3-41ba-9105-4611b3810f95"]
   }
 
   statement {
@@ -207,7 +198,7 @@ resource "aws_codepipeline" "pipeline" {
       output_artifacts = ["SourceOutput"]
 
       configuration = {
-        ConnectionArn    = "arn:aws:codeconnections:us-east-1:669136815479:connection/4b63f27d-607b-4a98-83fe-4000fedbfc15"
+        ConnectionArn    = "arn:aws:codeconnections:us-east-1:669136815479:connection/b7a6733f-6ed3-41ba-9105-4611b3810f95"
         FullRepositoryId = "${var.github_owner}/${var.github_repo}"
         BranchName       = "deploy_dev"
       }

@@ -1,5 +1,5 @@
 resource "aws_secretsmanager_secret" "supabase_service_role_key" {
-  name = "vercel-ai-chatbot/dev/SUPABASE_SERVICE_ROLE_KEY"
+  name = "vercel-ai-chatbot/dev/SUPABASE_SERVICE_ROLE_KEY_"
 }
 
 resource "aws_secretsmanager_secret_version" "supabase_service_role_key" {
@@ -11,7 +11,7 @@ resource "aws_secretsmanager_secret_version" "supabase_service_role_key" {
 }
 
 resource "aws_secretsmanager_secret" "openai_api_key" {
-  name = "vercel-ai-chatbot/dev/OPENAI_API_KEY"
+  name = "vercel-ai-chatbot/dev/OPENAI_API_KEY_"
 }
 
 resource "aws_secretsmanager_secret_version" "openai_api_key" {
@@ -22,11 +22,6 @@ resource "aws_secretsmanager_secret_version" "openai_api_key" {
   }
 }
 
-# resource "aws_secretsmanager_secret" "github_pat" {
-#   name = "vercel-ai-chatbot/dev/GITHUB_PAT"
-# }
-
-# resource "aws_secretsmanager_secret_version" "github_pat" {
-#   secret_id     = aws_secretsmanager_secret.github_pat.id
-#   secret_string = "dummy"
-# }
+resource "aws_secretsmanager_secret" "github_pat" {
+  name = "vercel-ai-chatbot/dev/GITHUB__PAT_"
+}
